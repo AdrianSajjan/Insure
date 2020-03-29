@@ -79,6 +79,17 @@ a {
     display: flex;
     align-items: center;
     margin-left: auto;
+    position: relative;
+  }
+
+  &__pattern {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    pointer-events: none;
+    display: none;
   }
 
   &__link {
@@ -129,10 +140,39 @@ a {
     height: 100%;
     right: 5%;
     top: 5rem;
+    z-index: 1;
   }
 
   &__container {
     background-color: var(--primary-dark-violet);
+    position: relative;
+    z-index: 0;
+  }
+
+  &__pattern {
+    position: absolute;
+    z-index: 3;
+    pointer-events: none;
+
+    &--desktop-left {
+      bottom: -30%;
+      left: 0;
+      height: 80%;
+    }
+    &--desktop-right {
+      right: 0;
+      height: 90%;
+    }
+    &--mobile-left {
+      top: 0;
+      left: 0;
+      display: none;
+    }
+    &--mobile-right {
+      right: 0;
+      bottom: 0;
+      display: none;
+    }
   }
 
   &__content {
@@ -228,6 +268,7 @@ a {
 /* Misc */
 .misc {
   padding: 10rem 0 5rem 0;
+
   &__container {
     width: 80%;
     margin: 0 auto;
@@ -235,6 +276,19 @@ a {
     background-color: var(--primary-dark-violet);
     padding: 2rem 4rem;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__pattern {
+    position: absolute;
+    right: 0;
+    top: 0;
+    pointer-events: none;
+
+    &--mobile {
+      display: none;
+    }
   }
 
   &__heading {
@@ -266,6 +320,17 @@ a {
 /* Footer */
 .footer {
   background-color: var(--secondary-light-gray);
+  position: relative;
+
+  &__pattern {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    &--mobile {
+      display: none;
+    }
+  }
 
   &__container {
     width: 80%;
@@ -381,20 +446,22 @@ a {
       background-color: var(--primary-dark-violet);
       transition: height 0.5s ease-in-out;
       margin-top: 10px;
+      overflow: hidden;
 
       &--open {
         height: calc(100vh - 50px);
       }
     }
 
+    &__pattern {
+      display: block;
+      transition: opacity 0.5s ease-in-out;
+    }
+
     &__link {
-      margin: 2rem 0;
+      margin: 4rem 0 0;
       font-size: 1.3rem;
       color: white;
-
-      &:first-child {
-        margin-top: 4rem;
-      }
 
       &:hover {
         color: var(--primary-grayish-blue);
@@ -427,6 +494,16 @@ a {
       position: unset;
       width: 100%;
       height: auto;
+    }
+    &__pattern {
+      &--desktop-left,
+      &--desktop-right {
+        display: none;
+      }
+      &--mobile-left,
+      &--mobile-right {
+        display: block;
+      }
     }
     &__content {
       padding: 3rem 0;
@@ -495,6 +572,14 @@ a {
     &__container {
       display: block;
     }
+    &__pattern {
+      &--desktop {
+        display: none;
+      }
+      &--mobile {
+        display: block;
+      }
+    }
     &__heading {
       text-align: center;
       display: block;
@@ -508,6 +593,16 @@ a {
   }
 
   .footer {
+    &__pattern {
+      &--desktop {
+        display: none;
+      }
+      &--mobile {
+        display: block;
+        width: 100%;
+      }
+    }
+
     &__nav {
       display: block;
 
