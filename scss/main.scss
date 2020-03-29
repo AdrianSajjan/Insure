@@ -35,7 +35,7 @@ a {
 .nav {
   display: flex;
   padding: 10px 0;
-  width: 90%;
+  width: 80%;
   margin: 0 auto;
 
   &__brand {
@@ -45,9 +45,34 @@ a {
     margin-right: 1rem;
   }
 
+  &__hamburger {
+    display: none;
+  }
+
   &__collapse {
     margin-left: auto;
-    display: none;
+    display: block;
+    background: url("../images/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    height: 30px;
+    width: 30px;
+    transition: opacity 0.1s;
+    border: none;
+    outline: none;
+
+    &--close {
+      background: url("../images/icon-close.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      margin-left: auto;
+    }
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 
   &__links {
@@ -111,7 +136,7 @@ a {
   }
 
   &__content {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
     padding: 5rem 0;
   }
@@ -159,6 +184,168 @@ a {
 }
 /*End of Banner */
 
+/* Services */
+.services {
+  padding-top: 10rem;
+
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  &__break {
+    width: 25%;
+    height: 2px;
+    background-color: var(--primary-grayish-blue);
+  }
+
+  &__heading {
+    font-size: 3rem;
+    font-family: var(--heading-font);
+    letter-spacing: 2px;
+    margin-top: 2rem;
+  }
+
+  &__cards {
+    margin-top: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 2rem;
+  }
+
+  .card {
+    &__title {
+      margin-top: 1rem;
+      font-family: var(--heading-font);
+    }
+    &__subtitle {
+      margin-top: 1rem;
+      text-align: justify;
+    }
+  }
+}
+/* End of Services */
+/* Misc */
+.misc {
+  padding: 10rem 0 5rem 0;
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    background-color: var(--primary-dark-violet);
+    padding: 2rem 4rem;
+    align-items: center;
+  }
+
+  &__heading {
+    font-size: 3rem;
+    letter-spacing: 2px;
+    font-family: var(--heading-font);
+    color: white;
+    margin-right: 1rem;
+  }
+
+  &__button {
+    padding: 0.5rem 1rem;
+    border: 2px solid white;
+    color: white;
+    text-transform: uppercase;
+    text-align: center;
+    margin-left: auto;
+    transition: 0.2s ease;
+    font-weight: bold;
+
+    &:hover {
+      color: var(--primary-dark-violet);
+      background-color: white;
+    }
+  }
+}
+/* End of Misc */
+
+/* Footer */
+.footer {
+  background-color: var(--secondary-light-gray);
+
+  &__container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 2.5rem 0;
+  }
+
+  &__nav {
+    padding-bottom: 1rem;
+    border-bottom: 1.2px solid var(--primary-grayish-blue);
+    display: flex;
+    align-items: center;
+
+    &-brand {
+      text-transform: uppercase;
+      margin-right: 2rem;
+    }
+  }
+
+  &__social-links {
+    margin-left: auto;
+  }
+
+  &__social-link {
+    color: var(--secondary-gray-violet);
+    margin: 0 10px;
+    transition: color 0.2 ease-in;
+
+    &:first-child {
+      margin-left: 0;
+    }
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    &:hover {
+      color: var(--secondary-dark-violet);
+    }
+  }
+
+  &__row {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+
+  &__column {
+    &-title {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      font-weight: bold;
+      color: var(--secondary-gray-violet);
+    }
+    &-links {
+      margin-top: 2rem;
+    }
+    &-link {
+      font-size: 0.9rem;
+      display: block;
+      font-weight: bold;
+      text-transform: uppercase;
+      color: var(--secondary-dark-violet);
+      margin: 10px 0;
+      transition: color 0.2s ease-out;
+      &:hover {
+        color: var(--secondary-gray-violet);
+      }
+      &:first-child {
+        margin-top: 0;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+/* End of Footer */
+
 /* Media Queries */
 @media screen and (max-width: 976px) {
   html {
@@ -167,12 +354,59 @@ a {
 }
 
 @media screen and (max-width: 796px) {
+  html {
+    font-size: 13px;
+  }
+
   .nav {
-    &__collapse {
-      display: block;
+    display: block;
+    padding-bottom: 0;
+    width: 100%;
+
+    &__brand {
+      width: 60%;
+      margin-left: 10%;
     }
+
+    &__hamburger {
+      display: block;
+      width: 40%;
+      float: right;
+      margin-right: 10%;
+    }
+
     &__links {
-      display: none;
+      height: 0;
+      flex-direction: column;
+      background-color: var(--primary-dark-violet);
+      transition: height 0.5s ease-in-out;
+      margin-top: 10px;
+
+      &--open {
+        height: calc(100vh - 50px);
+      }
+    }
+
+    &__link {
+      margin: 2rem 0;
+      font-size: 1.3rem;
+      color: white;
+
+      &:first-child {
+        margin-top: 4rem;
+      }
+
+      &:hover {
+        color: var(--primary-grayish-blue);
+      }
+
+      &--button {
+        border-color: white;
+        &:hover {
+          background-color: white;
+          color: var(--primary-dark-violet);
+        }
+      }
     }
   }
   .banner__image {
@@ -183,6 +417,10 @@ a {
 }
 
 @media screen and (max-width: 576px) {
+  html {
+    font-size: 14px;
+  }
+
   .banner {
     &__image {
       display: block;
@@ -211,6 +449,96 @@ a {
       display: block;
       text-align: center;
       width: 50%;
+    }
+  }
+
+  .services {
+    padding-top: 5rem;
+
+    &__break {
+      margin: 0 auto;
+    }
+
+    &__heading {
+      font-size: 3rem;
+      font-family: var(--heading-font);
+      letter-spacing: 2px;
+      margin-top: 2rem;
+      text-align: center;
+    }
+
+    &__cards {
+      grid-template-columns: 1fr;
+    }
+
+    .card {
+      &__image {
+        margin: 0 auto;
+        display: block;
+      }
+
+      &__title {
+        text-align: center;
+        margin-top: 1rem;
+        font-family: var(--heading-font);
+      }
+
+      &__subtitle {
+        margin-top: 1rem;
+        text-align: center;
+      }
+    }
+  }
+
+  .misc {
+    padding: 5rem 0;
+    &__container {
+      display: block;
+    }
+    &__heading {
+      text-align: center;
+      display: block;
+      font-size: 2rem;
+    }
+    &__button {
+      display: block;
+      width: 75%;
+      margin: 2rem auto 0;
+    }
+  }
+
+  .footer {
+    &__nav {
+      display: block;
+
+      &-brand {
+        display: block;
+        text-align: center;
+        margin-left: 25px;
+      }
+    }
+
+    &__social-links {
+      display: block;
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    &__row {
+      grid-template-columns: 1fr;
+    }
+
+    &__column {
+      text-align: center;
+      margin: 1.5rem 0;
+
+      &:first-child {
+        margin-top: 0;
+      }
+
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }

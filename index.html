@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Insure Landing Page</title>
+    <!-- Fontawesome Kit -->
+    <script
+      src="https://kit.fontawesome.com/de3cdb3406.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Google Fonts -->
     <link
       href="https://fonts.googleapis.com/css?family=DM+Serif+Display&display=swap"
@@ -20,7 +25,9 @@
     <!-- Navbar -->
     <nav class="nav">
       <a href="index.html" class="nav__brand">Insure</a>
-      <img src="images/icon-hamburger.svg" class="nav__collapse" />
+      <div class="nav__hamburger">
+        <button class="nav__collapse"></button>
+      </div>
       <div class="nav__links">
         <a href="#" class="nav__link">how we work</a>
         <a href="#" class="nav__link">blog</a>
@@ -32,7 +39,7 @@
     <!-- Main -->
     <main class="main">
       <!-- Banner -->
-      <div class="banner">
+      <section class="banner">
         <img
           src="images/image-intro-desktop.jpg"
           alt=""
@@ -50,9 +57,114 @@
             <a href="#" class="banner__button">view plans</a>
           </div>
         </div>
-      </div>
-      <!-- End of Main -->
+      </section>
+      <!-- End of Banner -->
+      <!-- Services -->
+      <section class="services">
+        <div class="services__container">
+          <div class="services__break"></div>
+          <h1 class="services__heading">We are different</h1>
+          <div class="services__cards">
+            <div class="services__card">
+              <img src="images/icon-snappy-process.svg" class="card__image" />
+              <h1 class="card__title">Snappy Process</h1>
+              <p class="card__subtitle">
+                Our application process can be completed in minutes not hours.
+                Don't get stuck filling in tedious forms.
+              </p>
+            </div>
+            <div class="services__card">
+              <img
+                src="images/icon-affordable-prices.svg"
+                class="card__image"
+              />
+              <h1 class="card__title">Affordable Prices</h1>
+              <p class="card__subtitle">
+                Our application process can be completed in minutes not hours.
+                Don't get stuck filling in tedious forms.
+              </p>
+            </div>
+            <div class="services__card">
+              <img src="images/icon-people-first.svg" class="card__image" />
+              <h1 class="card__title">People First</h1>
+              <p class="card__subtitle">
+                Our application process can be completed in minutes not hours.
+                Don't get stuck filling in tedious forms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- End of Services -->
+      <!-- Misc -->
+      <section class="misc">
+        <div class="misc__container">
+          <h1 class="misc__heading">Find out more<br />about how we work</h1>
+          <a href="#" class="misc__button">how we work</a>
+        </div>
+      </section>
+      <!-- End of Misc -->
     </main>
     <!-- End of Main -->
+    <footer class="footer">
+      <div class="footer__container">
+        <div class="footer__nav">
+          <h1 class="footer__nav-brand">Insure</h1>
+          <div class="footer__social-links">
+            <a href="#" class="footer__social-link"
+              ><i class="fab fa-facebook fa-lg"></i
+            ></a>
+            <a href="#" class="footer__social-link"
+              ><i class="fab fa-twitter fa-lg"></i
+            ></a>
+            <a href="#" class="footer__social-link"
+              ><i class="fab fa-pinterest fa-lg"></i
+            ></a>
+            <a href="#" class="footer__social-link"
+              ><i class="fab fa-instagram fa-lg"></i
+            ></a>
+          </div>
+        </div>
+        <div class="footer__row">
+          <div class="footer__column">
+            <div class="footer__column-title">our company</div>
+            <div class="footer__column-links">
+              <a href="" class="footer__column-link">how we work</a>
+              <a href="" class="footer__column-link">why insure?</a>
+              <a href="" class="footer__column-link">view plans</a>
+              <a href="" class="footer__column-link">reviews</a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <div class="footer__column-title">help me</div>
+            <div class="footer__column-links">
+              <a href="" class="footer__column-link">faq</a>
+              <a href="" class="footer__column-link">terms of use</a>
+              <a href="" class="footer__column-link">privacy policy</a>
+              <a href="" class="footer__column-link">cookies</a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <div class="footer__column-title">contact</div>
+            <div class="footer__column-links">
+              <a href="" class="footer__column-link">sales</a>
+              <a href="" class="footer__column-link">support</a>
+              <a href="" class="footer__column-link">live chat</a>
+            </div>
+          </div>
+          <div class="footer__column">
+            <div class="footer__column-title">others</div>
+            <div class="footer__column-links">
+              <a href="" class="footer__column-link">career</a>
+              <a href="" class="footer__column-link">press</a>
+              <a href="" class="footer__column-link">licenses</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/hamburger.js"></script>
   </body>
 </html>
